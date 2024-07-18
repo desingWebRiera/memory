@@ -1,25 +1,67 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
   <div>
-    <h1 class="text-blue-400 font-bold text-9xl">Hola</h1>
+    <h1 class="titulo">Juego Memory</h1>
+    <ul class="lista">
+      <li class="tarjeta" v-for="tarjeta in tarjetas">
+       <img :src="tarjeta.url" alt="tarjeta.name">
+      </li>
+    </ul>
   </div>
  
 </template>
+  <script >
+  //importamos todos los componentes
+  
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  export default {
+    name: 'App',
+    data() {
+      return {
+        //creamos tarjetas 
+       tarjetas: [
+        {name: "caballo", url:"caballoPelota.jpg"},
+        {name: "cocodrilo", url:"cocodrilo.jpeg"},
+        {name: "elefante", url:"elefante.jpg"},
+        {name: "hamster", url:"hamster.jpg"},
+        {name: "jirafa", url:"jirafa.jpg"},
+        {name: "leon", url:"leon.jpeg"},
+        {name: "loroFotografo", url:"loroFotografo.jpeg"},
+        {name: "monoMoto", url:"monoMoto.jpeg"},
+        {name: "riniceronte", url:"rinoceronte.jpg"},
+        {name: "vaca", url:"vaca.jpg"} 
+      ]
+    };
+  },
+};
+        
+    components: {
+      //registamos todos los componentes
+   
+    }
+  
+  
+  </script>
+
+<style >
+.titulo { 
+  text-align :center;
+  color:rgba(19, 184, 234, 0.627);
+  font-size: xx-large;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.lista{
+  display: flex;
+  flex-wrap: wrap;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+.tarjeta {
+  width:200px;
+  height:200px;
+  border:1px solid black;
+  
+
 }
+   
+
+
+
+
 </style>
