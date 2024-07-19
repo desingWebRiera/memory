@@ -1,67 +1,81 @@
 <template>
-  <div>
-    <h1 class="titulo">Juego Memory</h1>
-    <ul class="lista">
-      <li class="tarjeta" v-for="tarjeta in tarjetas">
-       <img :src="tarjeta.url" alt="tarjeta.name">
+  <div class="header">
+
+    <h1 class="titulo">Juego de Memoria</h1>
+    
+    <button class="inicio"></button>
+    
+    <div class="nivel">Nivel</div>
+  </div>
+  <div class="juego">
+    <ul>
+      <li v-for="(card,index) in cards" :key="index" @click="flipCard(inex)">
+        <div :class="{ flipped: card.flipped}">{{ cards.id }}</div>"
       </li>
     </ul>
   </div>
- 
+  <div class="footer">
+    <div></div>
+  </div>
 </template>
-  <script >
-  //importamos todos los componentes
-  
-
-  export default {
-    name: 'App',
-    data() {
-      return {
-        //creamos tarjetas 
-       tarjetas: [
-        {name: "caballo", url:"caballoPelota.jpg"},
-        {name: "cocodrilo", url:"cocodrilo.jpeg"},
-        {name: "elefante", url:"elefante.jpg"},
-        {name: "hamster", url:"hamster.jpg"},
-        {name: "jirafa", url:"jirafa.jpg"},
-        {name: "leon", url:"leon.jpeg"},
-        {name: "loroFotografo", url:"loroFotografo.jpeg"},
-        {name: "monoMoto", url:"monoMoto.jpeg"},
-        {name: "riniceronte", url:"rinoceronte.jpg"},
-        {name: "vaca", url:"vaca.jpg"} 
-      ]
+<script>
+export default {
+  name: "App",
+  data() {
+    return { 
+      level:1,
+      maxCards: 20,
+      cards: [],
     };
   },
-};
-        
-    components: {
-      //registamos todos los componentes
-   
+  methods: {
+    generateCards() {
+      const cards = [];
+      for (let i = 0; i< this.level * 4; i++) {
+        cards.push({id: i, flipped: false});
+      }
+      this.cards = cards;
+    },
+    flipCard(index) {
+      this.cards[index].flipped = !this.cards[index].flipped;
     }
+  },
+  mounted() {
+    this.generateCards();
+    
+  },
   
-  
-  </script>
-
-<style >
-.titulo { 
-  text-align :center;
-  color:rgba(19, 184, 234, 0.627);
-  font-size: xx-large;
 }
-.lista{
+</script>
+<style>
+
+.header{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  
+}
+.titulo{
+  color: blueviolet;
+  text-align: center;
+  margin: 0;
+}
+.inicio {
+  cursor: pointer;
+  width: 70%;
+  height: auto; /*mantiene proporcion del texto*/
+}
+.nivel {
+  margin-left: auto; /*empuja al div al lado derecho*/
+}
+.juego{
   display: flex;
   flex-wrap: wrap;
-}
-.tarjeta {
-  width:200px;
-  height:200px;
   border:1px solid black;
-  
-
+  border-radius: 5px;
+ 
 }
-   
 
-
-
-
+  
 </style>
