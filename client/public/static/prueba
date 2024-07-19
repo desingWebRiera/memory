@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div>
     <div class="header">
       <h1 class="titulo">Juego de Memoria</h1>
@@ -8,12 +8,12 @@
     <div class="juego">
       <ul class="lista">
         <li class="tarjeta" v-for="(tarjeta, index) in tarjetas" :key="index" @click="flipCard(index)">
-          <img :src="tarjeta.flipped ? tarjeta.url : tarjeta.volteadaUrl" alt="Imagen de la tarjeta">
+          <img :src="tarjeta.url" alt="Imagen de la tarjeta" v-if="tarjeta.flipped">
         </li>
       </ul>
     </div>
     <div class="footer">
-      <!-- Puedes agregar contenido al footer aquí -->
+       Puedes agregar contenido al footer aquí 
     </div>
   </div>
 </template>
@@ -24,16 +24,16 @@ export default {
   data() {
     return {
       tarjetas: [
-        { name: "caballo", url: "/static/tarjetasPeque/caballoPelota.jpg", volteadaUrl: "/static/imagenesVolteadas/caballoVolteada.jpg", flipped: false },
-        { name: "cocodrilo", url: "/static/tarjetasPeque/cocodrilo.jpeg", volteadaUrl: "/static/imagenesVolteadas/cocodriloVolteada.jpeg", flipped: false },
-        { name: "elefante", url: "/static/tarjetasPeque/elefante.jpg", volteadaUrl: "/static/imagenesVolteadas/elefanteVolteada.jpg", flipped: false },
-        { name: "hamster", url: "/static/tarjetasPeque/hamster.jpg", volteadaUrl: "/static/imagenesVolteadas/hamsterVolteada.jpg", flipped: false },
-        { name: "jirafa", url: "/static/tarjetasPeque/jirafa.jpg", volteadaUrl: "/static/imagenesVolteadas/jirafaVolteada.jpg", flipped: false },
-        { name: "leon", url: "/static/tarjetasPeque/leon.jpeg", volteadaUrl: "/static/imagenesVolteadas/leonVolteada.jpeg", flipped: false },
-        { name: "loroFotografo", url: "/static/tarjetasPeque/loroFotografo.jpeg", volteadaUrl: "/static/imagenesVolteadas/loroFotografoVolteada.jpeg", flipped: false },
-        { name: "monoMoto", url: "/static/tarjetasPeque/monoMoto.jpeg", volteadaUrl: "/static/imagenesVolteadas/monoMotoVolteada.jpeg", flipped: false },
-        { name: "riniceronte", url: "/static/tarjetasPeque/rinoceronte.jpg", volteadaUrl: "/static/imagenesVolteadas/rinoceronteVolteada.jpg", flipped: false },
-        { name: "vaca", url: "/static/tarjetasPeque/vaca.jpg", volteadaUrl: "/static/imagenesVolteadas/vacaVolteada.jpg", flipped: false }
+        { name: "caballo", url: "/static/tarjetasPeque/caballoPelota.jpg", flipped: false },
+        { name: "cocodrilo", url: "/static/tarjetasPeque/cocodrilo.jpeg", flipped: false },
+        { name: "elefante", url: "/static/tarjetasPeque/elefante.jpg", flipped: false },
+        { name: "hamster", url: "/static/tarjetasPeque/hamster.jpg", flipped: false },
+        { name: "jirafa", url: "/static/tarjetasPeque/jirafa.jpg", flipped: false },
+        { name: "leon", url: "/static/tarjetasPeque/leon.jpeg", flipped: false },
+        { name: "loroFotografo", url: "/static/tarjetasPeque/loroFotografo.jpeg", flipped: false },
+        { name: "monoMoto", url: "/static/tarjetasPeque/monoMoto.jpeg", flipped: false },
+        { name: "riniceronte", url: "/static/tarjetasPeque/rinoceronte.jpg", flipped: false },
+        { name: "vaca", url: "/static/tarjetasPeque/vaca.jpg", flipped: false }
       ],
       level: 1,
       cards: [],
@@ -124,5 +124,5 @@ export default {
   max-height: 100%;
   display: block;
 }
-</style>
+</style> -->
 

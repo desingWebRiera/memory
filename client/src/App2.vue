@@ -1,14 +1,14 @@
 <template>
     <div>
       <h1 class="titulo">Juego Memory</h1>
-      <ul class="lista">
-        <li class="tarjeta" v-for="tarjeta in tarjetas" :key="tarjeta.name">
-          <img :src="tarjeta.url" alt="Imagen de la targeta" >
-       </li>
-      </ul>
+      <ul>
+      <li v-for="(card,index) in cards" :key="index" @click="flipCard(inex)">
+        <div :class="{ flipped: card.flipped}">{{ cards.id }}</div>"
+      </li>
+    </ul>
     </div>
-   
   </template>
+  
     <script >
     //importamos todos los componentes
    
@@ -22,13 +22,13 @@
           {name: "caballo", url:"/static/tarjetasPeque/caballoPelota.jpg"},
           {name: "cocodrilo", url:"/static/tarjetasPeque/cocodrilo.jpeg"},
           {name: "elefante", url:"/static/tarjetasPeque/elefante.jpg"},
-          {name: "hamster", url:/static/tarjetasPeque/hamster.jpg},
-          {name: "jirafa", url:/static/tarjetasPeque/jirafa.jpg},
-          {name: "leon", url:/static/tarjetasPeque/leon.jpeg},
-          {name: "loroFotografo", url:/static/tarjetasPeque/loroFotografo.jpeg},
-          {name: "monoMoto", url:/static/tarjetasPeque/monoMoto.jpeg},
-          {name: "riniceronte", url:/static/tarjetasPeque/rinoceronte.jpg},
-          {name: "vaca", url:/static/tarjetasPeque/vaca.jpg} 
+          {name: "hamster", url:"/static/tarjetasPeque/hamster.jpg"},
+          {name: "jirafa", url:"/static/tarjetasPeque/jirafa.jpg"},
+          {name: "leon", url:"/static/tarjetasPeque/leon.jpeg"},
+          {name: "loroFotografo", url:"/static/tarjetasPeque/loroFotografo.jpeg"},
+          {name: "monoMoto", url:"/static/tarjetasPeque/monoMoto.jpeg"},
+          {name: "riniceronte", url:"/static/tarjetasPeque/rinoceronte.jpg"},
+          {name: "vaca", url:"/static/tarjetasPeque/vaca.jpg"} 
           
         ]
       };
